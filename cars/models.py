@@ -2,6 +2,7 @@ from django.db import models
 from django.urls import reverse
 
 class Car(models.Model):
+	car_img = models.ImageField(null=True, blank=True)
 	make = models.CharField(max_length=120)
 	model = models.CharField(max_length=120)
 	year = models.IntegerField()

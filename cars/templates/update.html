@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Update{% endblock title %}
+
+{% block content %}
+
+<h1>Update</h1>
+<br>
+<form action="{% url 'car-update' car_obj.id %}" method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+ 
+  <h2>{{form|crispy}}</h2>
+  <button type="submit" class="btn btn-info btn-lg">Update</button>
+  
+</form>
+{% endblock content %}
